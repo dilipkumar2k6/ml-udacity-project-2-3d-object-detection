@@ -21,6 +21,7 @@ PACKAGE_PARENT = '..'
 SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 
+import math
 import misc.params as params 
 
 class Association:
@@ -39,35 +40,35 @@ class Association:
         ############
         
         # the following only works for at most one track and one measurement
-        self.association_matrix = np.matrix([]) # reset matrix
+        self.association_matrix = [] # reset matrix
         self.unassigned_tracks = [] # reset lists
         self.unassigned_meas = []
         
         # Student changes
-        if len(meas_list) > 0:
-            self.unassigned_meas = [0]
-        if len(track_list) > 0:
-            self.unassigned_tracks = [0]
-        if len(meas_list) > 0 and len(track_list) > 0: 
-            self.association_matrix = np.matrix([[0]])
+        # if len(meas_list) > 0:
+        #    self.unassigned_meas = [0]
+        # if len(track_list) > 0:
+        #    self.unassigned_tracks = [0]
+        # if len(meas_list) > 0 and len(track_list) > 0: 
+        #    self.association_matrix = np.matrix([[0]])
         for track in track_list:
             res = []
             for meas in meas_list:
                 MHD = self.MHD(track, meas, KF)
                 sensor = meas.sensor
-                if self.gating_ok(MHD, sensor):
+                if self.gating(MHD, sensor):
                     res.append(MHD)
 #                     if sensor.name == "camera":
 #                         print("track {}, state={}, MHD= {}".format(track.id, track.state, MHD))
                 else:
                     res.append(np.inf)
-            association_matrix.append(res)
+            self.association_matrix.append(res)
         #Here we set all tracks and measurements to be unassigned, later on 
         #we will finally assign them when calling get_closest_track_and_meas
         self.unassigned_tracks = np.arange(len(track_list)).tolist()
         self.unassigned_meas = np.arange(len(meas_list)).tolist()
         
-        self.association_matrix = np.matrix(association_matrix)
+        self.association_matrix = np.matrix(self.association_matrix)
         
         return        
         ############

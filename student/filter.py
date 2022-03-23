@@ -24,7 +24,9 @@ import misc.params as params
 class Filter:
     '''Kalman filter class'''
     def __init__(self):
-        pass
+        self.dim_state = params.dim_state # process model dimension
+        self.dt = params.dt # time increment
+        self.q = params.q # process noise variable for Kalman filter Q
 
     def F(self):
         ############

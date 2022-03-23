@@ -128,6 +128,7 @@ def compute_performance_stats(det_performance_all):
         ious.append(item[0])
         center_devs.append(item[1])
         pos_negs.append(item[2])
+        pos_negs_arr = np.asarray(pos_negs)
     
     ####### ID_S4_EX3 START #######     
     #######    

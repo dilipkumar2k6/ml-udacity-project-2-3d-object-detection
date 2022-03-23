@@ -43,7 +43,7 @@ class Track:
         self.x = np.zeros((6,1))
         self.x[0:3] = pos_veh[0:3]
         
-        P_pos = Rot * meas.R * np.transpose(Rot)
+        P_pos = M_rot * meas.R * np.transpose(M_rot)
 
     
         P_vel = np.matrix([[params.sigma_p44**2, 0, 0],

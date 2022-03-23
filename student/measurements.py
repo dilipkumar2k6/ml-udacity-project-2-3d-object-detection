@@ -12,7 +12,7 @@
 
 # imports
 import numpy as np
-
+import math
 # add project directory to python path to enable relative imports
 import os
 import sys
