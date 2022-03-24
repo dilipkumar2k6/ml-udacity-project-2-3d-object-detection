@@ -35,3 +35,69 @@ Yes, I saw in the project that camera measurements were less accurate than lidar
 
 ### 4. Can you think of ways to improve your tracking results in the future?
 There are lot of code to understand and then make changes. Given timeline is very short and also course didn't teach all the components. It made very hard for me to understand and took lot of time. 
+
+# Results
+Sensor Fusion and Object Tracking using Resnet.
+## BEV Map Visualization
+![](img/output/Frame_1_BEV_Map_Visualization.png)
+![](img/output/Frame_2_BEV_Map_Visualization.png)
+![](img/output/Frame_3_BEV_Map_Visualization.png)
+![](img/output/Frame_4_BEV_Map_Visualization.png)
+![](img/output/Frame_5_BEV_Map_Visualization.png)
+
+From the point clouds, many stable features of the vehicles can be identified, for example rear-bumper, tail-lights, windshield, vehicle roof etc. The point cloud also captures intersections and vehicles standing in the parking lot.
+
+
+## Range Images
+![](img/output/Frame_1_Range_Image.png)
+![](img/output/Frame_2_Range_Image.png)
+![](img/output/Frame_3_Range_Image.png)
+![](img/output/Frame_4_Range_Image.png)
+![](img/output/Frame_5_Range_Image.png)
+
+## Intensity Layer
+![](img/output/Frame_1_Image_Intensity.png.png)
+![](img/output/Frame_2_Image_Intensity.png.png)
+![](img/output/Frame_3_Image_Intensity.png.png)
+![](img/output/Frame_4_Image_Intensity.png.png)
+![](img/output/Frame_5_Image_Intensity.png.png)
+
+## Height Layer
+![](img/output/Frame_1_Height_Map.png.png)
+![](img/output/Frame_2_Height_Map.png.png)
+![](img/output/Frame_3_Height_Map.png.png)
+![](img/output/Frame_4_Height_Map.png.png)
+![](img/output/Frame_5_Height_Map.png.png)
+
+## Image labels
+![](img/output/Frame_1_Image_Labels.png)
+![](img/output/Frame_2_Image_Labels.png)
+![](img/output/Frame_3_Image_Labels.png)
+![](img/output/Frame_4_Image_Labels.png)
+![](img/output/Frame_5_Image_Labels.png)
+
+## Model-based Object Detection in BEV Image
+![](img/output/Frame_1_labels_green_vs_detected_objects_red.png)
+![](img/output/Frame_2_labels_green_vs_detected_objects_red.png)
+![](img/output/Frame_3_labels_green_vs_detected_objects_red.png)
+![](img/output/Frame_4_labels_green_vs_detected_objects_red.png)
+![](img/output/Frame_5_labels_green_vs_detected_objects_red.png)
+
+Object detection in 3D cloud point is very interesting. Accuracy seems very satisfactory.
+
+## Model-based Object Detection in BEV Image - Lables vs Detected images
+![](img/output/Frame_1_labels_vs_detected_objects.png)
+![](img/output/Frame_2_labels_vs_detected_objects.png)
+![](img/output/Frame_3_labels_vs_detected_objects.png)
+![](img/output/Frame_4_labels_vs_detected_objects.png)
+![](img/output/Frame_5_labels_vs_detected_objects.png)
+
+## Performance evaluation for Object detection
+![](img/output/Accuracy.png)
+
+## Tracking output
+![](results/output/fpn_resnet/tracking000.png)
+![](results/output/fpn_resnet/tracking001.png)
+![](results/output/fpn_resnet/tracking002.png)
+![](results/output/fpn_resnet/tracking003.png)
+![](results/output/fpn_resnet/tracking004.png)
